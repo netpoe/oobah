@@ -17,9 +17,9 @@ class CreateUsersTable extends Migration
             $table->increments('id');
             $table->string('email')->unique();
             $table->string('name');
-            $table->string('paternal_lastname');
-            $table->string('maternal_lastname');
-            $table->string('mobile_number', 20);
+            $table->string('paternal_lastname')->nullable();
+            $table->string('maternal_lastname')->nullable();
+            $table->string('mobile_number', 20)->nullable();
             $table->string('password');
             $table->integer('company_id')->length(4)->unsigned()->default(null)->nullable()->comment('FK references companies table. The company where the user belongs to.');
             $table->integer('role_id')->length(2)->unsigned()->default(null)->nullable()->comment('FK references lu_user_roles table. The role assigned to the user.');

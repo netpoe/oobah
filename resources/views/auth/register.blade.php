@@ -24,6 +24,34 @@
                             </div>
                         </div>
 
+                        <div class="form-group{{ $errors->has('paternal_lastname') ? ' has-error' : '' }}">
+                            <label for="paternal_lastname" class="col-md-4 control-label">Apellido paterno</label>
+
+                            <div class="col-md-6">
+                                <input id="paternal_lastname" type="text" class="form-control" name="paternal_lastname" value="{{ old('paternal_lastname') }}" required autofocus>
+
+                                @if ($errors->has('paternal_lastname'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('paternal_lastname') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="form-group{{ $errors->has('maternal_lastname') ? ' has-error' : '' }}">
+                            <label for="maternal_lastname" class="col-md-4 control-label">Apellido materno</label>
+
+                            <div class="col-md-6">
+                                <input id="maternal_lastname" type="text" class="form-control" name="maternal_lastname" value="{{ old('maternal_lastname') }}" required autofocus>
+
+                                @if ($errors->has('maternal_lastname'))
+                                    <span class="help-block">
+                                        <strong>{{ $errors->first('maternal_lastname') }}</strong>
+                                    </span>
+                                @endif
+                            </div>
+                        </div>
+
                         <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
                             <label for="email" class="col-md-4 control-label">E-Mail Address</label>
 
